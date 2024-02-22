@@ -1,1 +1,13 @@
-# EncriptadorAlura
+body{
+    background: #F3F5FC;
+
+}
+.logo-alura{
+    position: relative;
+    width:120px;
+    height:48px;
+    top: 40px;
+    left: 40px;
+    gap: 40px;
+
+}
