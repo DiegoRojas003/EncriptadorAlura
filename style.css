@@ -1,11 +1,9 @@
-body{
+html,body{
     background: #F3F5FC;
-    
-    
 }
 p{
     font-family: "Inter", sans-serif;
-    font-size: 16px;
+    font-size: 100%;
     font-weight: 400;
     line-height: 19px;
     letter-spacing: 0em;  
@@ -16,31 +14,38 @@ p{
 }
 .container{
     display: flex;
-    height: 1024px;
+    width: 100vw;
+    height: 100vh;
 }
 .right-container{
     width: 70%;
+    height: 100%;
+}
+.campo-escritura{
+    position: relative;
+    width: 97%;
+    height: 95%;
+    top: 20px;
 }
 .logo-alura{
     position: absolute;
-    width:120px;
-    height:48px;
-    top: 40px;
-    left: 40px;
+    width:10%;
+    top: 0%;
+    left: 2%;
     gap: 40px;
 }
 #gettext{
     position: relative;
     background-color: #F3F5FC;
-    width: 50%;
-    height: 400px;
-    top: 168px;
-    left: 300px;
+    width: 65%;
+    height: 55%;
+    top: 15%;
+    left: 23%;
     resize: none;
     outline: none;
     border: none;
     font-family: 'Inter';
-    font-size: 32px;
+    font-size: 2em;
     font-weight: 400;
     line-height: 48px;
     letter-spacing: 0em;
@@ -53,30 +58,38 @@ p{
 .alerta{
     display: flex;
     position: relative;
+    width: 40%;
+    height: 2%;
+    left: 23%;
+    top: 25%;
+}
+.img-alerta{
+    margin-right: 2%;
+}
+.button-container{
+    
+    position: relative;
     width: 80%;
-    left: 300px;
-    top: 460px;
+    height: 67px;
+    top: 28.5%;
+    left: 23%;
+    gap: 24px;
 }
 button{
     font-family: "Inter", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 120%;
+    font-weight: 400%;
     line-height: 19px;
     letter-spacing: 0em;
     text-align: center;
     cursor: pointer;
-}
-.button-container{
-    position: relative;
-    width: 80%;
-    height: 67px;
-    top: 460px;
-    left: 300px;
-    gap: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 #encriptar{
-    width: 328px;
-    height: 67px;
+    width: 40%;
+    height: 100%;
+    min-height: 80%;
     left: 50px;
     padding: 24px;
     border-radius: 24px;
@@ -86,8 +99,8 @@ button{
     margin-right: 10px;
 }
 #desencriptar{
-    width: 328px;
-    height: 67px;
+    width: 40%;
+    height: 100%;
     padding: 24px;
     border-radius: 24px;
     border: 1px;
@@ -95,32 +108,36 @@ button{
     background: #D8DFE8;
     color: #0A3871;
 }
+/*Contenido derecho*/
+
 .left-container{
     width: 30%;
+    height:100%;
 }
 .campo-mensaje{
-
     position: relative;
-    width: 500px;
-    height: 944px;
-    top: 40px;
-    left:70px;
+    width: 80%;
+    height: 95%;
+    top: 20px;
+    left: 0px;
     border-radius: 32px;
     background: #FFFFFF;
 }
 .imagen-principal{
     position: relative;
-    top: 283px;
+    display: block;
+    top: 25%;
+    width: 80%;
     margin: auto;
     display: block;
 }
 
 #settext{
     display: none;
-    
     position: absolute;
-    width: 336px;
-    height: 781px;
+    margin: auto;
+    width: 50%;
+    height: 50%;
     top: 72px;
     right: 88px;
 }
@@ -128,20 +145,18 @@ button{
     position: relative;
     display: block;
     margin: auto;
-    width:  336px;
-    height:122px;
-    top: 300px;
+    width:  80%;
+    top: 25%;
     left: 10px;
     gap: 16px;
 }
 .copiar{ 
     position: relative;
-    display: block;
+    display: none;
     margin: auto;
-    
-    top: 423px;
-    width: 328px;
-    height: 67px;
+    top: 45%;
+    width: 80%;
+    height: 10%;
     padding: 24px;
     border-radius: 24px;
     border: 1px;
@@ -151,8 +166,5 @@ button{
 
 }
 .footer-container{
-    width: auto;
-    height: 10px;
-    top: 50%;
     text-align: center;
 }
