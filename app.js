@@ -1,5 +1,61 @@
-const textarea1 = document.querySelector("textarea");
-textarea1.addEventListener("keyup", e => {
-    let scHeight = e.target.scrollHeight;
-    e.target.style.height = `${scHeight}px`;
+document.addEventListener('DOMContentLoaded', function() {
+    let getTextarea = document.getElementById('gettext');
+    let setTextarea = document.getElementById('settext');
+    let imagenPrincipal = document.querySelector('.imagen-principal');
+    let mensaje = document.querySelector('.mensaje-noencontrado');
+    let copiar = document.querySelector('.copiar');
+    
+    getTextarea.addEventListener('input', function() {
+      if (getTextarea.value.trim() !== '') {
+        // Si hay texto en el cuadro de texto, oculta la imagen y muestra el textarea
+        imagenPrincipal.style.display = 'none';
+        mensaje.style.display='none';
+        setTextarea.style.display='block';
+        document.getElementById('encriptar').removeAttribute('disabled');
+        document.getElementById('desencriptar').removeAttribute('disabled');
+      } else {
+        // Si no hay texto, muestra la imagen y deshabilita el textarea
+        imagenPrincipal.style.display = 'block';
+        mensaje.style.display='block';
+        setTextarea.style.display='none';
+        copiar.style.display='none';
+        document.getElementById('encriptar').setAttribute('disabled','true');
+        document.getElementById('desencriptar').setAttribute('disabled','true');
+        setTextarea.textContent="";
+      }
+    });
 });
+    
+    function encriptara() {
+        let copiar = document.querySelector('.copiar');
+        let setTextarea = document.getElementById('settext');
+        let  texto= document.getElementById('gettext').value;
+        copiar.style.display='block';
+        let textoc=texto.replace(/e/gi, 'enter').replace(/i/gi, 'imes').replace(/a/gi, 'ai').replace(/o/gi, 'ober').replace(/u/gi, 'ufat');
+        setTextarea.textContent=textoc;
+        
+
+    }
+    function desencriptara() {
+        let copiar = document.querySelector('.copiar');
+        let setTextarea = document.getElementById('settext');
+        let  texto= document.getElementById('gettext').value;
+        copiar.style.display='block';
+        let textoc=texto.replace(/enter/gi, 'e').replace(/imes/gi, 'i').replace(/ai/gi, 'a').replace(/ober/gi, 'o').replace(/ufat/gi, 'u');
+        setTextarea.textContent=textoc;
+    }
+    async function copy() {
+        let texto = document.getElementById('settext').innerHTML;
+    
+        try {
+            await navigator.clipboard.writeText(texto);
+            alert('Contenido copiado al portapapeles');
+        } catch (err) {
+            alert('Error al copiar: ', err);
+        }
+    }
+  
+  
+    
+  
+
